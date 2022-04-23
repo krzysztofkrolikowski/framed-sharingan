@@ -24,12 +24,22 @@ jobs:
         uses: bahmutov/npm-install@v1
       - run: npm run build
       - name: Copy dist to another repo
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_KEY_GITHUB }}
-        with:
-          source_file: 'dist/assets'
-          destination_repo: 'krzysztofkrolikowski/krzysztofkrolikowski.github.io'
-          user_email: 'example@email.com'
-          user_name: 'example'
-          commit_message: 'Deploy'
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: 'dist'
+        destination-github-username: 'krzysztofkrolikowski'
+        destination-repository-name: 'krzysztofkrolikowski.github.io'
+        user-email: 'example@email.com'
+        target-branch: 'main'
+
+#uses: dmnemec/copy_file_to_another_repo_action@main
+#  env:
+#    API_TOKEN_GITHUB: ${{ secrets.API_KEY_GITHUB }}
+#  with:
+#    source_file: 'dist/assets'
+#    destination_repo: 'krzysztofkrolikowski/krzysztofkrolikowski.github.io'
+#    user_email: 'example@email.com'
+#    user_name: 'example'
+#    commit_message: 'Deploy'
