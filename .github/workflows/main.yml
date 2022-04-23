@@ -28,7 +28,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_KEY_GITHUB }}
         with:
-          source_file: 'dist'
+          source_file: 'assets'
           destination_repo: 'krzysztofkrolikowski/krzysztofkrolikowski.github.io'
           user_email: 'example@email.com'
           user_name: 'example'
