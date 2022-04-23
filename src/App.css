@@ -1,0 +1,24 @@
+.sharingan {
+  position: fixed;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  z-index: -1;
+}
+
+.sharingan div{
+  border: 25px solid;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #E96A23,
+              0 0 0 25px #000000,
+              -73.5px -42.5px 0 10px #A22015,
+              -73.5px -42.5px 0 25px #000000,
+              73.5px -42.5px 0 10px #A22015,
+              73.5px -42.5px 0 25px #000000,
+              0px 85px 0 10px #A22015,
+              0px 85px 0 25px #000000;
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #0000 95px, #000 92px 100px, #A22015 0);
+}
